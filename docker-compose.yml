@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:16.4
+    environment:
+      POSTGRES_DB: inventory
+      POSTGRES_USER: scanner
+      POSTGRES_PASSWORD: scanner
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U scanner -d inventory"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://scanner:scanner@postgres:5432/inventory}
+      API_TOKEN: ${API_TOKEN:?set API_TOKEN}
+      CREDENTIAL_ENCRYPTION_KEY: ${CREDENTIAL_ENCRYPTION_KEY:?set CREDENTIAL_ENCRYPTION_KEY}
+      SCANNER_ID: ${SCANNER_ID:-scanner-01}
+      SCANNER_VERSION: ${SCANNER_VERSION:-1.0.0}
+      MAX_CONCURRENT_SCANS: ${MAX_CONCURRENT_SCANS:-5}
+      SSH_CONNECT_TIMEOUT: ${SSH_CONNECT_TIMEOUT:-10}
+      WINRM_CONNECT_TIMEOUT: ${WINRM_CONNECT_TIMEOUT:-15}
+      COMMAND_TIMEOUT: ${COMMAND_TIMEOUT:-30}
+      SCAN_TIMEOUT: ${SCAN_TIMEOUT:-300}
+      SCHEDULER_INTERVAL: ${SCHEDULER_INTERVAL:-60}
+    ports: ["8000:8000"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+  frontend:
+    build: ./frontend
+    ports: ["3000:80"]
+    depends_on:
+      backend:
+        condition: service_healthy
+volumes:
+  postgres_data:

@@ -1,0 +1,287 @@
+# ============================================================================
+# PYTHON
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+env.bak/
+venv.bak/
+
+# pytest
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.hypothesis/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Cython
+*.c
+*.cpp
+
+# ============================================================================
+# NODE / JAVASCRIPT / REACT
+# ============================================================================
+node_modules/
+npm-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+dist/
+build/
+.next/
+out/
+.nuxt
+.cache/
+.vuepress/dist
+
+# ============================================================================
+# ENV / CONFIGURATION
+# ============================================================================
+.env
+.env.local
+.env.*.local
+.env.production.local
+.env.development.local
+.env.test.local
+.env.*.example.local
+
+# Credentials and secrets
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.jks
+*.vault
+secrets/
+.secrets/
+credentials/
+.aws/credentials
+.aws/config
+.config/
+.gcloud/
+.kube/
+kubeconfig
+
+# SSH Keys
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+id_dsa
+id_ecdsa
+known_hosts
+
+# ============================================================================
+# DATABASE
+# ============================================================================
+*.db
+*.sqlite
+*.sqlite3
+*.pkl
+*.pickle
+postgres_data/
+mysql_data/
+mongo_data/
+redis_data/
+data/
+*.sql
+*.sql.gz
+
+# ============================================================================
+# LOGS
+# ============================================================================
+*.log
+*.log.*
+logs/
+log/
+
+# ============================================================================
+# IDE / EDITOR
+# ============================================================================
+.vscode/
+.vscode-server/
+.idea/
+*.iml
+*.iws
+*.ipr
+.sublime-project
+.sublime-workspace
+.netbeans/
+.eclipse/
+.classpath
+.project
+.settings/
+.vim/
+.netrwhist
+*.swp
+*.swo
+*~
+.DS_Store
+.AppleDouble
+.LSOverride
+*.sublime-package
+
+# ============================================================================
+# OS
+# ============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+.cache
+
+# ============================================================================
+# DOCKER / VOLUMES
+# ============================================================================
+docker-compose.override.yml
+.docker/
+docker_data/
+volumes/
+.dockerignore_local
+
+# ============================================================================
+# BUILD ARTIFACTS
+# ============================================================================
+*.tar
+*.tar.gz
+*.zip
+*.7z
+*.rar
+*.iso
+.gradle/
+bin/
+out/
+target/
+
+# ============================================================================
+# PACKAGE MANAGER LOCKS (опционально - раскомментируй если нужно)
+# ============================================================================
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# poetry.lock
+# Pipfile.lock
+
+# ============================================================================
+# TEMPORARY FILES
+# ============================================================================
+*.tmp
+*.temp
+.tmp/
+tmp/
+temp/
+*.backup
+*.bak
+*.swp
+*.swo
+*~
+
+# ============================================================================
+# OS CACHE
+# ============================================================================
+.cache
+.session
+.pytest_cache
+.mypy_cache
+.node-gyp
+.npm
+.node-repl-history
+
+# ============================================================================
+# NODE SPECIFIC
+# ============================================================================
+.pnp
+.pnp.js
+.vercel
+
+# ============================================================================
+# VENV & PIP
+# ============================================================================
+activate
+activate.csh
+activate.fish
+activate.ps1
+pip-selfcheck.json
+pyvenv.cfg
+
+# ============================================================================
+# APPLICATION SPECIFIC
+# ============================================================================
+# Alembic
+alembic/versions/__pycache__/
+
+# Uploads / Generated files
+uploads/
+generated/
+dist/
+build/
+
+# OS generated files
+.localized
+.LSOverride
+.TemporaryItems
+
+# ============================================================================
+# TEST COVERAGE
+# ============================================================================
+.coverage.*
+coverage/
+htmlcov/
+.pytest_cache/
+.tox/
+
+# ============================================================================
+# IDE METADATA
+# ============================================================================
+*.swp
+*.swo
+*~
+.LSOverride
+.TemporaryItems
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
